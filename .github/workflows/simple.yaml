@@ -1,7 +1,7 @@
 name: Shell Commands
-
-on: [push, pull_request]
-
+on:
+  - push
+  - pull_request
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
@@ -12,11 +12,11 @@ jobs:
         run: |
           node -v
           npm -v
-      -  name: python Command
-         run: |
-           import platform
-           print(platform.processor())
-         shell: python
+      - name: python Command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
   run-windows-commands:
     runs-on: windows-latest
     steps:
